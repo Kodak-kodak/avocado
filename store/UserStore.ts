@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../utils/axios';
 import { action, makeObservable, observable } from 'mobx';
 
 interface UserProps {
@@ -17,7 +17,7 @@ class UserStore {
 
   getUser = () => {
     console.log('devUser');
-    axios.get('/main').then(res => {
+    return axios.get('/main').then(res => {
       console.log('res', res);
     });
   };
