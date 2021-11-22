@@ -6,7 +6,7 @@ interface UserProps {
 }
 
 class UserStore {
-  user = '';
+  user: UserProps | null = null;
 
   constructor() {
     makeObservable(this, {
@@ -16,9 +16,8 @@ class UserStore {
   }
 
   getUser = () => {
-    console.log('devUser');
-    return axios.get('/main').then(res => {
-      console.log('res', res);
+    axios.get('main/').then(res => {
+      this.user = res.data.email;
     });
   };
 }
