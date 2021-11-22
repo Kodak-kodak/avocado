@@ -16,8 +16,9 @@ class UserStore {
   }
 
   getUser = () => {
-    axios.get('/').then(res => {
-      this.user = res.data.data;
+    console.log('getUser');
+    axios.get('/main').then(res => {
+      console.log('res', res);
     });
   };
 }
