@@ -16,7 +16,7 @@ class UserStore {
   }
 
   getUser = () => {
-    console.log('getUser');
+    console.log('devUser');
     axios.get('/main').then(res => {
       console.log('res', res);
     });
